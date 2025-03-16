@@ -5,7 +5,7 @@
     --secondary-color: #343a40; /* Χρώμα φόντου για dark στοιχεία (footer, navbar κτλ) */
     --text-color: #ffffff;  /* Χρώμα κειμένου */
     --background-color: #f8f9fa; /* Χρώμα φόντου για light sections */
-    --hero-bg-image: url('/Images/Hero.jpg'); /* Εδώ βάζετε τη διαδρομή της εικόνας για το background */
+    --hero-bg-image: url('https://tagarasthomas.github.io/TsakasDemo/Images/Hero.jpg'); /* Εδώ βάζετε τη διαδρομή της εικόνας για το background */
     --hero-overlay-color: rgba(0, 0, 0, 0.5);  /* Ελαφριά σκίαση στο hero background */
 }
 

@@ -3,25 +3,25 @@ const servicesData = [
         title: "Κούρεμα",
         price: "€10",
         description: "Από κλασικά έως μοντέρνα στυλ, θα βρούμε το κατάλληλο για εσάς!",
-        logo: "/Images/icon1.svg"  // Παράδειγμα λογότυπου
+        logo: "https://tagarasthomas.github.io/TsakasDemo/Images/icon1.svg"  // Παράδειγμα λογότυπου
     },
     {
         title: "Ξύρισμα",
         price: "€10",
         description: "Παραδοσιακό ξύρισμα με ξυράφι για απόλυτη άνεση και ακρίβεια.",
-        logo: "/Images/icon3.svg"  // Παράδειγμα λογότυπου
+        logo: "https://tagarasthomas.github.io/TsakasDemo/Images/icon3.svg"  // Παράδειγμα λογότυπου
     },
     {
         title: "Περιποίηση Γενειάδας",
         price: "€5",
         description: "Φροντίδα και διαμόρφωση για την τέλεια γενειάδα σας.",
-        logo: "/Images/icon2.svg"  // Παράδειγμα λογότυπου
+        logo: "https://tagarasthomas.github.io/TsakasDemo/Images/icon2.svg"  // Παράδειγμα λογότυπου
     },
     {
         title: "Σαπούνι για γενειάδα",
         price: "€5",
         description: "Αναζωογονητικό σαπούνι για απαλή και υγιή γενειάδα.",
-        logo: "/Images/icon4.svg"  // Παράδειγμα λογότυπου
+        logo: "https://tagarasthomas.github.io/TsakasDemo/Images/icon4.svg"  // Παράδειγμα λογότυπου
     }
 ];
 
