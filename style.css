@@ -1,0 +1,525 @@
+/* Γενικό στυλ για την ιστοσελίδα */
+
+:root {
+    --primary-color: #007bff;  /* Χρώμα για κουμπιά και βασικά στοιχεία */
+    --secondary-color: #343a40; /* Χρώμα φόντου για dark στοιχεία (footer, navbar κτλ) */
+    --text-color: #ffffff;  /* Χρώμα κειμένου */
+    --background-color: #f8f9fa; /* Χρώμα φόντου για light sections */
+    --hero-bg-image: url('/Images/Hero.jpg'); /* Εδώ βάζετε τη διαδρομή της εικόνας για το background */
+    --hero-overlay-color: rgba(0, 0, 0, 0.5);  /* Ελαφριά σκίαση στο hero background */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+.hero {
+    background: var(--hero-bg-image) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hero-overlay-color);
+    z-index: -1;
+}
+
+.hero .text-center {
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 150px; /* Ανάλογα με το μέγεθος του λογότυπου, μπορείς να το προσαρμόσεις */
+    height: auto;
+    margin-bottom: 20px; /* Απόσταση κάτω από το λογότυπο */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.4);  /* Λευκό με διαφάνεια για το φόντο */
+    border: 2px solid rgba(0, 0, 0, 0.9);  /* Λευκό border με διαφάνεια */
+    border-radius: 10px;  /* Στρογγυλεμένες γωνίες */
+    padding: 10px;  /* Κάποιο padding για άνεση στο κείμενο */
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.hero .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+.hero .lead {
+    color: #efefc9; /* Το κείμενο παραμένει με το χρώμα που έχεις */
+    background-color: rgba(0, 0, 0, 0.4);  /* Λευκό με διαφάνεια για το φόντο */
+    border: 2px solid rgba(0, 0, 0, 0.9);  /* Λευκό border με διαφάνεια */
+    border-radius: 10px;  /* Στρογγυλεμένες γωνίες */
+    padding: 10px;  /* Κάποιο padding για άνεση στο κείμενο */
+}
+
+/* Κώδικας για το section των υπηρεσιών */
+#services {
+    background-color: var(--background-color);
+}
+
+#services .col-md-4 {
+    margin-bottom: 30px;
+}
+
+#services h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#services p {
+    font-size: 1rem;
+}
+
+/* Μικρότερα στυλ για την εικόνα του λογότυπου στο navigation */
+.navbar .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/* Κώδικας για το section της επικοινωνίας */
+#contact {
+    background-color: var(--background-color);
+}
+
+#contact .form-control {
+    margin-bottom: 10px;
+}
+
+#contact button {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#contact button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+}
+
+footer .text-white {
+    color: var(--text-color);
+}
+
+footer a {
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Κολλάζ εικόνας */
+.image-collage {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Για να προσαρμόζονται οι εικόνες σε μικρές οθόνες */
+}
+
+/* Πολαρόιντ στυλ */
+.polaroid {
+    position: relative;
+    width: 250px; /* Πλάτος της εικόνας */
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά γύρω από την εικόνα */
+    transform: rotate(3deg); /* Λίγη περιστροφή για το polaroid εφέ */
+    transition: transform 0.3s ease; /* Ομαλή μετάβαση όταν περνάει ο δείκτης του ποντικιού */
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.polaroid p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hover effect για το polaroid */
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05); /* Όταν ο χρήστης περνάει το ποντίκι πάνω, η εικόνα μεγαλώνει λίγο */
+}
+
+/* Responsive στυλ για μικρότερες οθόνες */
+@media (max-width: 768px) {
+    .polaroid {
+        width: 200px; /* Μικρότερο πλάτος για κινητά */
+    }
+    .image-collage {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .polaroid {
+        width: 150px; /* Μικρότερο πλάτος για πολύ μικρές οθόνες */
+    }
+    .polaroid p {
+        font-size: 12px;
+    }
+}
+/* Υπηρεσίες */
+#services {
+    padding: 50px 0;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 30px;
+    margin-right: 20px; /* Απόσταση μεταξύ των καρτών */
+    margin-left: 20px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Όταν περνάει το ποντίκι, το κουτί ανυψώνεται */
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.service-logo {
+    width: 50px; /* Μέγεθος λογότυπου */
+    height: auto;
+    margin-left: 15px;
+}
+
+/* Δημιουργία 2-2 στηλών */
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 48%;
+    }
+}
+
+/* Responsive για μικρές συσκευές */
+@media (max-width: 768px) {
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-logo {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+    }
+
+    .service-price {
+        font-size: 1.1rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+}
+/* Φόντο για το ολόκληρο το section */
+.container py-5 {
+    background-color: #f8f9fa; /* Γκρι φόντο για όλο το section */
+    padding: 50px 0; /* Δίνουμε περισσότερο χώρο στο πάνω και κάτω μέρος */
+}
+
+/* Πολαροειδές στυλ για τις αξιολογήσεις */
+.review-card {
+    background-color: #fff; /* Κάρτες με λευκό φόντο */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.review-image img {
+    width: 15%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+}
+
+.review-content {
+    padding: 20px;
+}
+
+.review-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.review-source {
+    font-size: 0.9rem;
+    color: #007bff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+
+/* Πολυτεχνικό Στυλ για μικρές οθόνες */
+@media (max-width: 768px) {
+    .review-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+#book-appointment {
+    background-color: #f8f9fa; /* Ελαφρύ γκρι φόντο για το section */
+    padding: 50px 0;
+    width: 100%; /* Κάλυψη σε όλο το πλάτος της οθόνης */
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+#book-appointment .content-wrapper {
+    max-width: 1140px; /* Εφόσον θέλουμε το περιεχόμενο να μην είναι πολύ μεγάλο */
+    margin: 0 auto; /* Κεντράρισμα του περιεχομένου */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.icon-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-link {
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+.icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+/* Κεντράρισμα για τη διάταξη του section */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Responsive Σχεδιασμός */
+@media (max-width: 768px) {
+    .icon-container {
+        margin: 10px 0;
+        flex: 1 1 100%;
+    }
+
+    .row .col-md-4 {
+        margin-bottom: 20px;
+        flex: 1 1 100%;
+    }
+}
+
+/* Section για το ωράριο και τη διεύθυνση */
+#business-info {
+    background-color: #ffffff; /* Λευκό φόντο για το section */
+    padding: 50px 0;
+    text-align: center;
+}
+
+#business-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#business-info p {
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    background-color: #f8f9fa; /* Γκρι φόντο για την κάρτα */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.info-card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.business-hours {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.125rem;
+    margin-bottom: 30px;
+}
+
+.business-hours li {
+    margin-bottom: 10px;
+}
+
+.map-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.map-links .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.map-links .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-card {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .business-hours {
+        font-size: 1rem;
+    }
+
+    .map-links .btn {
+        font-size: 0.9rem;
+    }
+}
+
+.icon-footer {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.icon-footer:hover {
+    transform: scale(1.2);
+}
+footer .icon {
+    width: 30px;  /* Μπορείς να αλλάξεις την τιμή σε όποιο μέγεθος θέλεις */
+    height: 30px; /* Το ίδιο ισχύει και εδώ */
+}
