@@ -76,6 +76,7 @@ body {
     padding: 10px;  /* Κάποιο padding για άνεση στο κείμενο */
 }
 
+
 /* Κώδικας για το section των υπηρεσιών */
 #services {
     background-color: var(--background-color);
@@ -143,64 +144,158 @@ footer a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Για να προσαρμόζονται οι εικόνες σε μικρές οθόνες */
+    flex-wrap: wrap;
 }
-
+  
 /* Πολαρόιντ στυλ */
 .polaroid {
-    position: relative;
-    width: 250px; /* Πλάτος της εικόνας */
-    margin: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά γύρω από την εικόνα */
-    transform: rotate(3deg); /* Λίγη περιστροφή για το polaroid εφέ */
-    transition: transform 0.3s ease; /* Ομαλή μετάβαση όταν περνάει ο δείκτης του ποντικιού */
+position: relative;
+width: 100%;
+max-width: 250px; /* Πλάτος της εικόνας */
+margin: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά γύρω από την εικόνα */
+transform: rotate(3deg); /* Λίγη περιστροφή για το polaroid εφέ */
+transition: transform 0.3s ease; /* Ομαλή μετάβαση όταν περνάει ο δείκτης του ποντικιού */
 }
 
 .polaroid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
+width: 100%;
+height: auto;
+display: block;
+border-radius: 8px;
+cursor: pointer; /* Δείκτης για να δείξει ότι είναι clickable */
 }
 
 .polaroid p {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 14px;
-    margin: 0;
-    width: 100%;
-    text-align: center;
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+background-color: rgba(0, 0, 0, 0.6);
+color: white;
+padding: 5px;
+border-radius: 5px;
+font-size: 14px;
+margin: 0;
+width: 100%;
+text-align: center;
 }
 
 /* Hover effect για το polaroid */
 .polaroid:hover {
-    transform: rotate(0deg) scale(1.05); /* Όταν ο χρήστης περνάει το ποντίκι πάνω, η εικόνα μεγαλώνει λίγο */
+transform: rotate(0deg) scale(1.05); /* Όταν ο χρήστης περνάει το ποντίκι πάνω, η εικόνα μεγαλώνει λίγο */
 }
 
-/* Responsive στυλ για μικρότερες οθόνες */
+/* Στυλ για το modal */
+.modal {
+display: none; /* Κρυφό αρχικά */
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8); /* Μαύρο υπόβαθρο */
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+/* Στυλ για την εικόνα του modal */
+.modal-content {
+max-width: 80%;
+max-height: 90vh;
+margin: auto;
+display: block;
+object-fit: contain; /* Εξασφαλίζει ότι η εικόνα δεν παραμορφώνεται */
+border-radius: 15px;  /* Στρογγυλές γωνίες */
+border: none;  /* Κατάργηση οποιουδήποτε border */
+background-color: transparent;
+}
+
+/* Κλείσιμο του modal */
+.close {
+position: absolute;
+top: 15px;
+right: 35px;
+color: #f1f1f1;
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+color: #bbb;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* Λεζάντα για την εικόνα στο modal */
+.modal-caption {
+position: absolute;
+bottom: 40px;  /* Μεγαλύτερο διάστημα από την εικόνα */
+left: 50%;
+width: 30%;
+transform: translateX(-50%);
+color: #fff;
+font-size: 20px;  /* Μεγαλύτερη γραμματοσειρά για καλύτερη αναγνωσιμότητα */
+background-color: rgba(0, 0, 0, 0.6);
+padding: 10px;
+border-radius: 5px;
+}
+
+/* Λειτουργία κλεισίματος modal από τον κενό χώρο */
+.modal-content,
+.close {
+cursor: pointer;
+}
+
+@media (min-width: 697px) {
+.modal-content {
+    max-width: 80vh;
+    max-height: 90vh;
+}
+}
+
+/* Στυλ για responsive εικόνες */
 @media (max-width: 768px) {
-    .polaroid {
-        width: 200px; /* Μικρότερο πλάτος για κινητά */
-    }
-    .image-collage {
-        justify-content: center;
-    }
+.polaroid {
+    width: 100%; /* Αφήνουμε το πλάτος να καταλαμβάνει όλη την οθόνη στις μικρές οθόνες */
+}
 }
 
 @media (max-width: 480px) {
-    .polaroid {
-        width: 150px; /* Μικρότερο πλάτος για πολύ μικρές οθόνες */
-    }
-    .polaroid p {
-        font-size: 12px;
-    }
+.polaroid {
+    width: 100%;
 }
+.polaroid p {
+    font-size: 12px;
+}
+}
+
+
+
+
+
+
+/* Responsive στυλ για μικρότερες οθόνες */
+@media (max-width: 768px) {
+.polaroid {
+    width: 100%; /* Αφήνουμε το πλάτος να καταλαμβάνει όλη την οθόνη στις μικρές οθόνες */
+}
+}
+
+@media (max-width: 480px) {
+.polaroid {
+    width: 100%;
+}
+.polaroid p {
+    font-size: 12px;
+}
+}
+
+
 /* Υπηρεσίες */
 #services {
     padding: 50px 0;
@@ -522,4 +617,41 @@ p {
 footer .icon {
     width: 30px;  /* Μπορείς να αλλάξεις την τιμή σε όποιο μέγεθος θέλεις */
     height: 30px; /* Το ίδιο ισχύει και εδώ */
+}
+
+/* Κάρτα Υπηρεσιών */
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.service-price {
+  font-size: 16px;
+  color: #4caf50;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #555;
+}
+
+button:hover {
+  background-color: #007bff;
 }
