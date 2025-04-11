@@ -25,7 +25,7 @@ const servicesData = [
     },
     {
         title: "Περιποίηση Γενειάδας",
-        price: "€8",
+        price: "€5",
         description: "Διαμόρφωση και φροντίδα για την τέλεια γενειάδα.",
         logo: "Images/icon4.svg"  // Παράδειγμα λογότυπου
     }
